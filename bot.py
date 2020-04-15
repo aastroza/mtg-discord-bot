@@ -34,7 +34,7 @@ async def odds(ctx, *args):
             text_copies = 'copies'
         
         probs = getProbability(ncards_deck, ntargetcards_in_deck, ncards_draw, ntargetcards_wanted)
-        response = 'Probability of draw **at least** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[0])+' %.\n'+'Probability of draw **exactly** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[1])+' %.\n'+'Probability of draw **at most** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[2])+' %.'
+        response = 'Probability of drawing **at least** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[0])+' %.\n'+'Probability of drawing **exactly** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[1])+' %.\n'+'Probability of drawing **at most** '+str(ntargetcards_wanted)+' '+text_copies+' of the card is: '+str(probs[2])+' %.'
         
     else:
         response = "What are the odds of drawing X copies of a card?\n Example: !odds ncards_deck ntargetcards_in_deck ncards_draw ntargetcards_wanted"
