@@ -21,7 +21,7 @@ def getProbability(N, A, n, t):
 bot = commands.Bot(command_prefix='!')
 with open('rap.txt') as f:
     rap = f.readlines()
-rap = [x.strip() for x in content] 
+rap = [x.strip() for x in rap] 
 
 
 @bot.command(name='odds', help='What are the odds of drawing X copies of a card?\n Example: !odds ncards_deck ntargetcards_in_deck ncards_draw ntargetcards_wanted')
