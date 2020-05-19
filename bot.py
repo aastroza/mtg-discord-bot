@@ -1,6 +1,7 @@
 from utils import hypergeom_cdf
 from discord.ext import commands
 import os
+import random
 
 TOKEN = os.environ.get('TOKEN', None)
 
@@ -18,6 +19,10 @@ def getProbability(N, A, n, t):
 
 
 bot = commands.Bot(command_prefix='!')
+with open('rap.txt') as f:
+    rap = f.readlines()
+rap = [x.strip() for x in content] 
+
 
 @bot.command(name='odds', help='What are the odds of drawing X copies of a card?\n Example: !odds ncards_deck ntargetcards_in_deck ncards_draw ntargetcards_wanted')
 async def odds(ctx, *args):
@@ -40,5 +45,13 @@ async def odds(ctx, *args):
         response = "What are the odds of drawing X copies of a card?\n Example: !odds ncards_deck ntargetcards_in_deck ncards_draw ntargetcards_wanted"
 
     await ctx.send(response)
+
+@bot.command(name='thiago', help='El rap de Thiaaaago Silvaaaa')
+async def odds(ctx, *args):
+
+    response = random.choice(rap)
+    await ctx.send(response)
+
+
 
 bot.run(TOKEN)
