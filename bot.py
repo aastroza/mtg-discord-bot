@@ -19,9 +19,14 @@ def getProbability(N, A, n, t):
 
 
 bot = commands.Bot(command_prefix='!')
+
 with open('rap.txt') as f:
     rap = f.readlines()
-rap = [x.strip() for x in rap] 
+rap = [x.strip() for x in rap]
+
+with open('desky.txt') as f:
+    desky = f.readlines()
+desky = [x.strip() for x in desky] 
 
 
 @bot.command(name='odds', help='What are the odds of drawing X copies of a card?\n Example: !odds ncards_deck ntargetcards_in_deck ncards_draw ntargetcards_wanted')
@@ -50,6 +55,12 @@ async def odds(ctx, *args):
 async def odds(ctx, *args):
 
     response = random.choice(rap)
+    await ctx.send(response)
+
+@bot.command(name='desky', help='Filosofía de Desky')
+async def odds(ctx, *args):
+
+    response = random.choice(desky)
     await ctx.send(response)
 
 
