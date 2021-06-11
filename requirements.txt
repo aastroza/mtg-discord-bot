@@ -9,6 +9,6 @@ multidict==4.7.5
 numpy==1.18.1
 scipy==1.4.1
 six==1.14.0
-websockets==8.1
+websockets==9.1
 wincertstore==0.2
 yarl==1.4.2
