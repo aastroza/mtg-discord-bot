@@ -68,6 +68,7 @@ async def odds(ctx, *args):
 async def odds(ctx, *args):
 
     if (len(args) == 2):
+        ctx.send('Inventing Card, please wait 2 minutes')
         name = str(args[0])
         mana_cost = str(args[1])
         
@@ -75,7 +76,7 @@ async def odds(ctx, *args):
         response = card
         
     else:
-        response = "AI Generated Magic: The Gathering Cards from http://magic.glei.tz/\n Example: !ai-generate 'Pato Roman, The Anxious Mage' '{1}{U}{W}'"
+        response = 'AI Generated Magic: The Gathering Cards from http://magic.glei.tz/\n Example: !ai-generate "Pato Roman, The Anxious Mage" "{1}{U}{W}"'
 
     await ctx.send(response)
 

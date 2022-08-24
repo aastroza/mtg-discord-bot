@@ -61,7 +61,7 @@ def _generate_card(name, mana_cost):
     return response.json()
 
 def _generate_card_art_url(card):
-    #print("Fetching artwork")
+    print("Fetching artwork")
     response = requests.request("GET",
                                 CARD_ART_GENERATION_URL,
                                 params={"card": json.dumps(card)})
@@ -76,7 +76,7 @@ def _generate_card_art_url(card):
                                     params={"wombo_task_id": wombo_task_id})
         state = response.json()['state']
         if state != "completed":
-            #print("Still waiting...")
+            print("Still waiting...")
             time.sleep(5)
 
     return response.json()['art_url']
@@ -85,6 +85,6 @@ def _download_card(card):
     #driver = _get_driver()
 
     url = f'{CARD_DISPLAY_URL}?encoded=1&card={quote(json.dumps(card))}'
-    #print("Printing card...")
+    print("Printing card...")
     #print(url)
     return url
