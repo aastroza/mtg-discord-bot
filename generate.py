@@ -57,7 +57,7 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
   }
 })();''' 
 
-TOKEN = os.environ.get('CHROMEDRIVER_PATH', None)
+CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', None)
 
 def generate(name, mana_cost):
     card = _generate_card(name, mana_cost)
