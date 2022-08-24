@@ -142,6 +142,8 @@ def _get_driver():
     options.headless = True
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--window-size=1920x1480')
     options.binary_location = GOOGLE_CHROME_PATH
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
