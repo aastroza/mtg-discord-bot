@@ -1,4 +1,5 @@
 from utils import hypergeom_cdf
+from generate import generate
 from discord.ext import commands
 import os
 import random
@@ -63,6 +64,19 @@ async def odds(ctx, *args):
     response = random.choice(desky)
     await ctx.send(response)
 
+@bot.command(name='ai-generate', help='AI Generated Magic: The Gathering Cards from http://magic.glei.tz/')
+async def odds(ctx, *args):
 
+    if (len(args) == 2):
+        name = str(args[0])
+        mana_cost = str(args[1])
+        
+        card = generate(name, mana_cost)
+        response = card
+        
+    else:
+        response = "AI Generated Magic: The Gathering Cards from http://magic.glei.tz/\n Example: !ai-generate 'Pato Roman, The Anxious Mage' '{1}{U}{W}'"
+
+    await ctx.send(response)
 
 bot.run(TOKEN)
