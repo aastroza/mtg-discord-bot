@@ -58,6 +58,7 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
 })();''' 
 
 CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', None)
+GOOGLE_CHROME_PATH = os.environ.get('GOOGLE_CHROME_PATH', None)
 
 def generate(name, mana_cost):
     card = _generate_card(name, mana_cost)
@@ -139,6 +140,9 @@ def _download_card(card):
 def _get_driver():
     options = Options()
     options.headless = True
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    options.binary_location = GOOGLE_CHROME_PATH
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
     return driver
