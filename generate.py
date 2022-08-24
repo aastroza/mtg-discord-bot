@@ -144,8 +144,8 @@ def _get_driver():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920x1480')
-    options.addArguments("force-device-scale-factor=0.75")
-    options.addArguments("high-dpi-support=0.75")
+    options.add_argument('--force-device-scale-factor=0.75')
+    options.add_argument('--high-dpi-support=0.75')
     options.binary_location = GOOGLE_CHROME_PATH
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
