@@ -47,7 +47,7 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
       link.href = URL.createObjectURL(blob);
       link.download = "%s";
       link.click();
-      return new Promise(function(fufill) { setTimeout(15, fufill, link); });
+      return new Promise(function(fufill) { setTimeout(20, fufill, link); });
     }).then(function(link) {
       if(link.href.indexOf('blob:') === 0) {
         URL.revokeObjectURL(link.href);
