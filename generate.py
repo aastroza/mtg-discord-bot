@@ -36,7 +36,8 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
         backgroundColor: null,
         allowTaint: true,
         foreignObjectRendering: true,
-        scale: 0.5,
+        windowWidth:343,
+        windowHeight:473,
         useCORS: true,
         logging: true
     }).then(function(canvas) {
