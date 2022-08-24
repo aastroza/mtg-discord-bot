@@ -35,6 +35,8 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
     html2canvas(document.getElementById('card'), {
         backgroundColor: null,
         allowTaint: true,
+        foreignObjectRendering: true,
+        scale: 0.5,
         useCORS: true,
         logging: true
     }).then(function(canvas) {
