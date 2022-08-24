@@ -129,7 +129,9 @@ def _download_card(card):
 
     
     driver.get(url)
-    time.sleep(10)
+    time.sleep(5)
+    driver.execute_script("$('#content').css('zoom', 0.25);")
+    time.sleep(5)
     driver.execute_script(DOWNLOAD_BOOKMARKLET % card['filename'])
     time.sleep(15)
 
