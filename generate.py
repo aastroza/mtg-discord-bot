@@ -67,6 +67,7 @@ def generate(name, mana_cost):
     card['url'] = f'https://corsproxy.io/?{quote(card_art_url)}'
     card['filename'] = f'{slugify(card_name)}_{int(time.time())}.png'
 
+    #_download_card(card)
     #print("Finished card:")
     #print(json.dumps(card, indent=4))
     return _download_card(card)
@@ -133,7 +134,7 @@ def _download_card(card):
 
     driver.close()
 
-    return url
+    return card['filename']
 
 def _get_driver():
     options = Options()
