@@ -130,8 +130,6 @@ def _download_card(card):
     
     driver.get(url)
     time.sleep(5)
-    driver.execute_script("$('#content').css('zoom', 0.25);")
-    time.sleep(5)
     driver.execute_script(DOWNLOAD_BOOKMARKLET % card['filename'])
     time.sleep(15)
 
@@ -145,10 +143,11 @@ def _get_driver():
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--window-size=1920x1480')
-    options.add_argument('--force-device-scale-factor=0.75')
-    options.add_argument('--high-dpi-support=0.75')
+    options.add_argument('--window-size=720x480')
+    #options.add_argument('--force-device-scale-factor=0.75')
+    #options.add_argument('--high-dpi-support=0.75')
     options.binary_location = GOOGLE_CHROME_PATH
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
+    driver.maximize_window()
     return driver
