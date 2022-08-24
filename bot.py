@@ -69,7 +69,7 @@ async def odds(ctx, *args):
 async def odds(ctx, *args):
 
     if (len(args) == 2):
-        await ctx.send('Inventing Card, please wait 2 minutes')
+        await ctx.send('Creating Card, please wait 2 minutes')
         name = str(args[0])
         mana_cost = str(args[1])
         

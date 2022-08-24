@@ -44,7 +44,7 @@ DOWNLOAD_BOOKMARKLET = '''(function() {
       link.href = URL.createObjectURL(blob);
       link.download = "%s";
       link.click();
-      return new Promise(function(fufill) { setTimeout(10, fufill, link); });
+      return new Promise(function(fufill) { setTimeout(15, fufill, link); });
     }).then(function(link) {
       if(link.href.indexOf('blob:') === 0) {
         URL.revokeObjectURL(link.href);
@@ -124,7 +124,7 @@ def _download_card(card):
 
     url = f'{CARD_DISPLAY_URL}?encoded=1&card={quote(json.dumps(card))}'
     print("Printing card...")
-    #print(url)
+    print(url)
 
     
     driver.get(url)
