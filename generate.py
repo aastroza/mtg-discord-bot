@@ -132,9 +132,9 @@ def _download_card(card):
 
     
     driver.get(url)
-    time.sleep(5)
+    time.sleep(20)
     driver.execute_script(DOWNLOAD_BOOKMARKLET % card['filename'])
-    time.sleep(15)
+    time.sleep(20)
 
     size = driver.get_window_size()
     print("Window size: width = {}px, height = {}px".format(size["width"], size["height"]))
